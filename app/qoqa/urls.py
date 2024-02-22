@@ -24,7 +24,7 @@ urlpatterns = [
     path("qwine/", include("qwine.urls")),
     path(
         "accounts/login/",
-        auth_views.LoginView.as_view(next_page="qwine:list"),
+        auth_views.LoginView.as_view(next_page="qwine:cave"),
         name="login",
     ),
     path("accounts/logout/", auth_views.LogoutView.as_view(), name="logout"),

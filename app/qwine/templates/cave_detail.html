@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ cave.name }}</title>
+</head>
+<body>
+    <h1>Inventaire de {{ cave.name }}</h1>
+    <ul>
+        {% for inventaire in inventaires %}
+            <li>{{ inventaire.quantite }} de bouteilles de {{ inventaire.vin }}</li>
+        {% endfor %}
+    </ul>
+    <h2>
+        <form action="{% url 'qwine:inventaire-create' cave.id %}" method="get" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit" >Ajouter des bouteilles à la cave</button>
+    </h2>
+</body>
+</html>

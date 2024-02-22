@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vins</title>
+</head>
+<body>
+    <h1>Liste de mes caves</h1>
+    <ul>
+        {% for cave in caves %}
+            <li>
+                <a href="{% url 'qwine:cave-detail' cave.id %}">
+                    <strong>Cave:</strong> {{ cave.name }}<br>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>
+        <form action="{% url 'qwine:cave-create' %}" method="get" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit" >Créer une nouvelle cave à la liste</button>
+    </h2>
+    </form>
+</body>
+</html>
