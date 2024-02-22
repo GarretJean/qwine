@@ -1,5 +1,6 @@
-from django.db import models
+from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.db import models
 from django_countries.fields import CountryField
 
 
@@ -14,6 +15,8 @@ class Vin(models.Model):
     COULEURS = {"BL": "Blanc", "RO": "Rouge", "RS": "Rosé", "OR": "Orange"}
 
     appelation = models.CharField(max_length=100)
+
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     volume = models.PositiveIntegerField()
     pays = models.CharField(
         max_length=200,
