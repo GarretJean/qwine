@@ -16,7 +16,7 @@ class Vin(models.Model):
 
     appelation = models.CharField(max_length=100)
 
-    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     volume = models.PositiveIntegerField()
     pays = models.CharField(
         max_length=200,
