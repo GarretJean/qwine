@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail du vin </title>
+</head>
+<body>
+    <h1>Details</h1>
+    <ul>
+        <li><strong>Appelation:</strong> {{ vin.appelation }}</li>
+        <li><strong>Volume:</strong> {{ vin.volume }}</li>
+        <li><strong>Pays:</strong> {{ vin.get_pays_display }}</li>
+        <li><strong>Region:</strong> {{ vin.region }}</li>
+        <li><strong>Degree:</strong> {{ vin.degree }}</li>
+        <li><strong>Couleur:</strong> {{ vin.get_couleur_display }}</li>
+        <li><strong>Cepages:</strong>
+            <ul>
+                {% for cepage in vin.cepages.all %}
+                    <li>{{ cepage.name }}</li>
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>

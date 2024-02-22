@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class QwineConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'qwine'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "qwine"

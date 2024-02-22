@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Cepage, Vin
+
+admin.site.register(Vin)
+
+admin.site.register(Cepage)

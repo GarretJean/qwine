@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vins</title>
+</head>
+<body>
+    <h1>Liste des Vins</h1>
+    <ul>
+        {% for vin in vins %}
+            <li>
+                <a href="{% url 'qwine:detail' vin.id %}">
+                    <strong>Appelation:</strong> {{ vin.appelation }}<br>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
