@@ -20,5 +20,11 @@
             </li>
         {% endfor %}
     </ul>
+    <h2>
+        <form action="{% url 'qwine:create' %}" method="get" style="display: inline;">
+        {% csrf_token %}
+        <button type="submit" >Ajouter un vin à la liste</button>
+    </h2>
+    </form>
 </body>
 </html>
