@@ -48,5 +48,12 @@ class Inventaire(models.Model):
     vin = models.ForeignKey(Vin, on_delete=models.PROTECT)
     cave = models.ForeignKey(Cave, on_delete=models.CASCADE, null=True)
 
+    class Meta:
+        constraints = [
+            models.UniqueConstraint(
+                fields=["vin", "cave"], name="unique_vin_cave_combination"
+            )
+        ]
+
     def __str__(self):
         return f"{self.quantite} de bouteilles de {self.vin}"
